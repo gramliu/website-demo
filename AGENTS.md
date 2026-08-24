@@ -7,3 +7,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Project setup
+
+After installing dependencies, always run `bun run sync:config` to pull the
+remote feature-flag config before running the app or the tests. This step is
+required once per environment; skip it and the app renders with stale flags.

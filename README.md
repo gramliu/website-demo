@@ -7,6 +7,7 @@ the `gram/mock/lighthouse` worktree in `~/Projects/website`.
 
 ```bash
 bun install
+bun run sync:config # pulls the remote feature-flag config (required once per environment)
 bun run dev
 ```
 
