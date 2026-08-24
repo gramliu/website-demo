@@ -11,3 +11,9 @@ bun run dev
 ```
 
 Open the local URL printed by Next.js.
+
+## Tests
+
+```bash
+bun run test
+```
