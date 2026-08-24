@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-canvas: #242829;
+  --color-canvas-rgb: 36 40 41;
+  --color-text-primary-rgb: 243 233 218;
+  --color-text-muted-rgb: 184 176 165;
+  --color-sandstone: #e0a76f;
+  --color-sandstone-rgb: 224 167 111;
+  --color-divider: rgb(224 167 111 / 28%);
+}
+
+html,
+body {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: rgb(var(--color-text-primary-rgb));
+  background-color: var(--color-canvas);
+  background-image: radial-gradient(
+    circle at 70% 15%,
+    rgb(53 71 75 / 26%),
+    transparent 32rem
+  );
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: var(--color-canvas);
+  background: var(--color-sandstone);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sandstone);
+  outline-offset: 4px;
+}
