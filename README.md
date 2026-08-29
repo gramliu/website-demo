@@ -1,7 +1,6 @@
 # website-demo
 
-A minimal version of Gram Liu's animated portfolio landing page, modeled after
-the `gram/mock/lighthouse` worktree in `~/Projects/website`.
+A minimal personal portfolio website with an animated landing page.
 
 ## Run locally
 
