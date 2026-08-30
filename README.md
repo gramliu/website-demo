@@ -17,3 +17,10 @@ Open the local URL printed by Next.js.
 ```bash
 bun run test
 ```
+
+## Project layout
+
+- `pages/` — Next.js pages (entrypoint: `pages/index.tsx`)
+- `src/components/` — shared UI components
+- `src/lib/` — helpers and utilities (with colocated tests)
+- `scripts/` — repo setup scripts
