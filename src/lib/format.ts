@@ -8,3 +8,11 @@ export function truncate(value: string, max: number): string {
 export function formatDate(date: Date): string {
   return date.toISOString().slice(0, 10);
 }
+
+/** Capitalizes the first letter of each word in a string. */
+export function titleCase(value: string): string {
+  return value
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+}
